@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Order Your Smoothie</h1>
+    <form id="smoothieForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required><br><br>
+
+        <p>Select Size:</p>
+        <label for="small"><input type="radio" id="small" name="value" value="Small">Small</label>
+        <label for="medium"><input type="radio" id="medium" name="value" value="Medium">Medium</label>
+        <label for="large"><input type="radio" id="large" name="value" value="Large">Large</label><br><br>
+
+        <label for="base">Choose a base:</label>
+        <select id="base" name="base">
+            <option value="Milk">Milk</option>
+            <option value="Almond Milk">Almond Milk</option>
+            <option value="Soy Milk">Soy Milk</option>
+            <option value="Yogrut">Yogrut</option>
+            <option value="Coconut Water">Coconut Water</option>
+            <option value="Water">Water</option>
+        </select><br><br>
+
+        <p>Fruits:</p>
+        <label for="banana"><input type="checkbox" id="banana" name="fruits" value="Banana">Banana</label>
+        <label for="strawberry"><input type="checkbox" id="strawberry" name="fruits" value="Strawberry">Strawberry</label>
+        <label for="blueberry"><input type="checkbox" id="blueberry" name="fruits" value="Blueberry">Blueberry</label>
+        <label for="mango"><input type="checkbox" id="mango" name="fruits" value="Mango">Mango</label>
+        <label for="pineapple"><input type="checkbox" id="pineapple" name="fruits" value="Pineapple">Pineapple</label>
+        <label for="apple"><input type="checkbox" id="apple" name="fruits" value="Apple">Apple</label><br><br>
+
+        <p>Add-ins:</p>
+        <label for="protein"><input type="checkbox" id="protein" name="addins" value="Protein Powder">Protein Powder</label>
+        <label for="seeds"><input type="checkbox" id="seeds" name="addins" value="Chia Seeds">Chia Seeds</label>
+        <label for="peanut"><input type="checkbox" id="peanut" name="addins" value="Peanut Butter">Peanut Butter</label>
+        <label for="oats"><input type="checkbox" id="oats" name="addins" value="Oats">Oats</label>
+        <label for="spirulina"><input type="checkbox" id="spirulina" name="addins" value="Spirulina">Spirulina</label>
+        <label for="Honey"><input type="checkbox" id="Honey" name="addins" value="Honey">Honey</label><br><br>
+
+        <p>Optional Toppings:</p>
+        <label for="Granola"><input type="checkbox" id="Granola" name="toppings" value="Granola">Granola</label>
+        <label for="flakes"><input type="checkbox" id="flakes" name="toppings" value="Coconut Flakes">Coconut Flakes</label>
+        <label for="chocolate"><input type="checkbox" id="chocolate" name="toppings" value="Dark Chocolate Chips">Dark Chocolate Chips</label>
+        <label for="cranberries"><input type="checkbox" id="oats" name="cranberries" value="Dried Cranberries">Dried Cranberries</label>
+        <label for="mint"><input type="checkbox" id="mint" name="toppings" value="Fresh Mint Leaves">Fresh Mint Leaves</label>
+        <label for="nuts"><input type="checkbox" id="nuts" name="toppings" value="Crushed Walnuts">Crushed Walnuts</label><br><br>
+
+        <button type="submit">Order</button>
+    </form>
+</body>
+</html>
