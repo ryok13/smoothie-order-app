@@ -4,7 +4,7 @@
 } */
 body {
     font-family: proxmia_nova, Helvetica, Arial, sans-serif;
-    background-image: url("/img/smoothie-menu-background.png");
+    background-image: url("../img/smoothie-menu-background.png");
     background-size: cover;
     background-repeat: no-repeat;
     /* background-position: left center; */
