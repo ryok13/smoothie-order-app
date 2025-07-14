@@ -1,3 +1,4 @@
+// Smoothie Class Definition
 class Smoothie {
     name;
     size;
@@ -14,7 +15,7 @@ class Smoothie {
         this.addins = addins;
         this.toppings = toppings;
     }
-
+    // Returns a formatted HTML string summarizing the order
     getResult() {
         return `Thank you, ${this.name}! You ordered a ${this.size} smoothie with:<br><br>
         - Base: ${this.base}<br>
@@ -23,23 +24,23 @@ class Smoothie {
         - Toppings: ${this.toppings.join(", ")}<br>`;
     }
 }
-
+// Form Submission Handler
 document.getElementById("smoothieForm").addEventListener("submit", function(event) {
     event.preventDefault();
-
+    // Get the user's name
     let name = document.getElementById("name").value;
-
+    // Get selected size (radio input)
     let sizeRadios = document.querySelector('input[name="size"]:checked');
     if (!sizeRadios) {
         alert("Please select a smoothie size.");
     } else {
         size = sizeRadios.value;
     }
-
+    // Get selected base
     let base = document.getElementById("base").value;
-
+    // Get selected fruit
     let fruits = document.getElementById("fruits").value;
-
+    // Collect all selected add-ins (checkbox inputs)
     let addinsCheck = document.querySelectorAll('input[name="addins"]');
     let addins = [];
     for(let i=0; i < addinsCheck.length; i++) {
@@ -47,7 +48,7 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
             addins.push(addinsCheck[i].value);
         }
     }
-
+    // Collect all selected toppings (checkbox inputs)
     let toppingsCheck = document.querySelectorAll('input[name="toppings"]');
     let toppings = [];
     for(let i=0; i < toppingsCheck.length; i++) {
@@ -56,19 +57,23 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
         }
     }
 
+    // Create a new Smoothie object with user selections
     let customSmoothie = new Smoothie(name, size, base, fruits, addins, toppings);
 
+    // Get or create the output area
     let output = document.getElementById("output");
     if (!output) {
         output = document.createElement("p");
         output.id = "output";
         document.getElementsByClassName("container")[0].appendChild(output);
     }
+    // Display the order summary
     output.innerHTML = customSmoothie.getResult();
 
+    // Create the smoothie image element
     let smoothieImg = document.createElement("img");
     smoothieImg.alt = "Smoothie Image";
-
+    // Set the image height based on selected size
     switch (customSmoothie.size) {
         case "Small":
             smoothieImg.setAttribute("height", "100");
@@ -82,7 +87,7 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
         default:
             smoothieImg.setAttribute("height", "150");
     }
-
+    // Set the image source based on selected fruit
     switch (customSmoothie.fruits) {
         case "Banana":
             smoothieImg.src = "../img/smoothie-banana.png";
@@ -106,5 +111,6 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
             smoothieImg.src = "../img/smoothie-banana.png";
     }
 
+    // Append the smoothie image to the output section
     output.appendChild(smoothieImg);
 })

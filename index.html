@@ -11,15 +11,17 @@
 <body>
     <div class="container">
         <h1>Order Your Smoothie</h1>
+        <!-- Smoothie order form -->
         <form id="smoothieForm">
+            <!-- User Name Input -->
             <label for="name">Your Name:</label>
             <input type="text" id="name" required><br><br>
-
+            <!-- Smoothie Size Selection (Radio Buttons) -->
             <p>Select Size:</p>
             <label for="small"><input type="radio" id="small" name="size" value="Small">Small</label>
             <label for="medium"><input type="radio" id="medium" name="size" value="Medium">Medium</label>
             <label for="large"><input type="radio" id="large" name="size" value="Large">Large</label><br><br><br>
-
+            <!-- Base Selection (Dropdown) -->
             <label for="base">Choose a base:</label>
             <select id="base" name="base">
                 <option value="Milk">Milk</option>
@@ -29,7 +31,7 @@
                 <option value="Coconut Water">Coconut Water</option>
                 <option value="Water">Water</option>
             </select><br><br><br>
-
+            <!-- Fruit Selection (Dropdown) -->
             <label for="fruits">Choose a fruit:</label>
             <select id="fruits" name="fruits">
                 <option value="Banana">Banana</option>
@@ -39,7 +41,7 @@
                 <option value="Kiwi">Kiwi</option>
                 <option value="Apple">Apple</option>
             </select><br><br>
-
+            <!-- Add-ins Selection (Checkboxes) -->
             <p>Add-ins:</p>
             <label for="protein"><input type="checkbox" id="protein" name="addins" value="Protein Powder">Protein Powder</label>
             <label for="seeds"><input type="checkbox" id="seeds" name="addins" value="Chia Seeds">Chia Seeds</label>
@@ -47,7 +49,7 @@
             <label for="oats"><input type="checkbox" id="oats" name="addins" value="Oats">Oats</label>
             <label for="spirulina"><input type="checkbox" id="spirulina" name="addins" value="Spirulina">Spirulina</label>
             <label for="Honey"><input type="checkbox" id="Honey" name="addins" value="Honey">Honey</label><br><br>
-
+            <!-- Optional Toppings Selection (Checkboxes) -->
             <p>Optional Toppings:</p>
             <label for="Granola"><input type="checkbox" id="Granola" name="toppings" value="Granola">Granola</label>
             <label for="flakes"><input type="checkbox" id="flakes" name="toppings" value="Flakes">Flakes</label>
