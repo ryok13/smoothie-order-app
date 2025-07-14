@@ -16,7 +16,7 @@ class Smoothie {
     }
 
     getResult() {
-        return `Thank you ${this.name}! You ordered a ${this.size} smoothie with:<br>
+        return `Thank you, ${this.name}! You ordered a ${this.size} smoothie with:<br><br>
         - Base: ${this.base}<br>
         - Fruits: ${this.fruits.join(", ")}<br>
         - Add-ins: ${this.addins.join(", ")}<br>
@@ -29,13 +29,26 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
 
     let name = document.getElementById("name").value;
 
-    let sizeRadios = document.querySelectorAll('input[name="size"]');
-    let size = [];
-    for(let i=0; i < sizeRadios.length; i++) {
-        if(sizeRadios[i].checked) {
-            size = sizeRadios[i].value;
-            break;
-        }
+    // let sizeRadios = document.querySelectorAll('input[name="size"]');
+    // let size = [];
+    // for(let i=0; i < sizeRadios.length; i++) {
+    //     if(sizeRadios[i].checked) {
+    //         size = sizeRadios[i].value;
+    //         break;
+    //     }
+    // }
+    // if (size.length === 0) {
+    //     alert("Please select a smoothie size.");
+    //     return;
+    // }
+
+    let errors = []
+
+    let sizeRadios = document.querySelector('input[name="size"]:checked');
+    if (!sizeRadios) {
+        errors.push("Please select a smoothie size.");
+    } else {
+        size = sizeRadios.value;
     }
 
     let base = document.getElementById("base").value;
@@ -46,6 +59,9 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
         if(fruitsCheck[i].checked) {
             fruits.push(fruitsCheck[i].value);
         }
+    }
+    if (fruits.length === 0) {
+        errors.push("Please select at least one fruit.");
     }
 
     let addinsCheck = document.querySelectorAll('input[name="addins"]');
@@ -64,11 +80,26 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
         }
     }
 
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return;
+    }
+
     let customSmoothie = new Smoothie(name, size, base, fruits, addins, toppings);
 
-    let output = document.createElement("p");
-    // document.body.appendChild(output);
-    // output.textContent = customSmoothie.getResult();
+    // let output = document.createElement("p");
+    // // document.body.appendChild(output);
+    // // output.textContent = customSmoothie.getResult();
+    // output.innerHTML = customSmoothie.getResult();
+    // output.id = "output";
+    // document.getElementsByClassName("container")[0].appendChild(output);
+
+    let output = document.getElementById("output");
+    if (!output) {
+        output = document.createElement("p");
+        output.id = "output";
+        document.getElementsByClassName("container")[0].appendChild(output);
+    }
     output.innerHTML = customSmoothie.getResult();
-    document.body.appendChild(output);
+
 })
