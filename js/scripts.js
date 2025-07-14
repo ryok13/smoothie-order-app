@@ -90,25 +90,25 @@ document.getElementById("smoothieForm").addEventListener("submit", function(even
     // Set the image source based on selected fruit
     switch (customSmoothie.fruits) {
         case "Banana":
-            smoothieImg.src = "../img/smoothie-banana.png";
+            smoothieImg.src = "./img/smoothie-banana.png";
             break;
         case "Strawberry":
-            smoothieImg.src = "../img/smoothie-strawberry.png";
+            smoothieImg.src = "./img/smoothie-strawberry.png";
             break;
         case "Blueberry":
-            smoothieImg.src = "../img/smoothie-blueberry.png";
+            smoothieImg.src = "./img/smoothie-blueberry.png";
             break;
         case "Orange":
-            smoothieImg.src = "../img/smoothie-orange.png";
+            smoothieImg.src = "./img/smoothie-orange.png";
             break;
         case "Kiwi":
-            smoothieImg.src = "../img/smoothie-kiwi.png";
+            smoothieImg.src = "./img/smoothie-kiwi.png";
             break;
         case "Apple":
-            smoothieImg.src = "../img/smoothie-apple.png";
+            smoothieImg.src = "./img/smoothie-apple.png";
             break;
         default:
-            smoothieImg.src = "../img/smoothie-banana.png";
+            smoothieImg.src = "./img/smoothie-banana.png";
     }
 
     // Append the smoothie image to the output section
